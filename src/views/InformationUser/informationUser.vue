@@ -58,7 +58,7 @@ export default defineComponent({
   },
   mounted() {
     const presenter = new InformationUserPresenter(this as UserInforView)
-    presenter.getUsers(this.$route.params.id as string)
+    presenter.getUserById(this.$route.params.id as string)
   },
   methods: {
     setUser(user: UserAdapter): void {
