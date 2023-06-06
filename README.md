@@ -1,0 +1,1 @@
+# intellya-front-vue
