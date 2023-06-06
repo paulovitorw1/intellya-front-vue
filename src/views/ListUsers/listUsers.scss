@@ -1,0 +1,34 @@
+@import "../../assets/sass/app.scss";
+
+table {
+    .last-column-th {
+        width: 1%;
+    }
+    
+    thead {
+        border-bottom: 1px solid #dde1e4 !important;
+    }
+
+    .table-blue-primary {
+        --bs-table-bg: #f7f7f7;
+        th {
+            -moz-user-select: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            -o-user-select: none;
+            font-weight: 600;
+            font-size: 16px;
+            line-height: 19px;
+        }
+
+        th:first-child {
+            padding: 12px 0 12px 0;
+            border-top-left-radius: 4px;
+        }
+
+        th:last-child {
+            border-top-right-radius: 4px;
+        }
+    }
+}

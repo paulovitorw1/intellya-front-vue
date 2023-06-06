@@ -1,0 +1,44 @@
+.btn-fields {
+  margin: 4px;
+  padding-right: 4px;
+  display: table;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.btn-text {
+  font-weight: 500;
+  margin-left: 4px;
+  margin-right: 4px;
+  display: inline;
+  vertical-align: middle;
+}
+
+.button-primary,
+.button-secondary {
+  min-width: 96px;
+}
+
+.btn {
+  min-height: 32px;
+  margin: 0;
+  padding: 0;
+}
+
+button {
+  line-height: normal;
+}
+
+.btn-tertiary.btn-background {
+  color: #E4CA85;
+}
+
+.btn-tertiary.btn-background:hover {
+  color: #b09e71;
+}
+
+.btn-tertiary.btn-background:active,
+.btn-tertiary.btn-background:focus {
+  color: #b09e71;
+  border-color: white;
+}
