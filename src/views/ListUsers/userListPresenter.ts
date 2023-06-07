@@ -3,9 +3,10 @@ import { UserListView } from "@/Interfaces/userView.interface";
 import { User } from "@/Interfaces/user.interface";
 import { UserRest } from "@/services/api/user.rest";
 import { adaptAPIUserToUser } from "@/Adapter/adaptAPIUserToUser";
+import { UserListPresenterInterface } from "@/Interfaces/userListPresenter.interface";
 
 
-export class UserListPresenter {
+export class UserListPresenter implements UserListPresenterInterface {
   private view: UserListView;
   private _users: UserRest
   private originalUsers: UserAdapter[];

@@ -1,10 +1,11 @@
 import { adaptAPIUserToUser } from "@/Adapter/adaptAPIUserToUser";
+import { InformationUserPresenterInterface } from "@/Interfaces/informationUserPresenter.interface";
 import { User } from "@/Interfaces/user.interface";
 import { UserAdapter } from "@/Interfaces/userAdapter.interface";
 import { UserInforView } from "@/Interfaces/userView.interface";
 import { UserRest } from "@/services/api/user.rest";
 
-export class InformationUserPresenter {
+export class InformationUserPresenter implements InformationUserPresenterInterface {
     private view: UserInforView;
     private _user:  UserRest
 
