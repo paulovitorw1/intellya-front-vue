@@ -29,7 +29,7 @@
   </table>
 </template>
 <script lang="ts">
-import { defineComponent } from "vue";
+import { defineComponent, inject } from "vue";
 import { UserAdapter } from "@/Interfaces/userAdapter.interface";
 import { UserListPresenter } from "./userListPresenter";
 import { UserListView } from "@/Interfaces/userView.interface";
@@ -38,13 +38,31 @@ export default defineComponent({
   data() {
     return {
       users: [] as UserAdapter[],
+      presenter: null as UserListPresenter | null,
     };
   },
+  setup() {
+    const searchTerm = inject("searchTerm");
+
+    return {
+      searchTerm,
+    };
+  },
+  watch: {
+    searchTerm() {
+      this.filtersUsers();
+    },
+  },
   mounted() {
-    const presenter = new UserListPresenter(this as UserListView);
-    presenter.getUsers();
+    this.presenter = new UserListPresenter(this as UserListView);
+    this.presenter.getUsers();
   },
   methods: {
+    filtersUsers(): void {
+      if (!this.presenter) return;
+      this.presenter.filtersUsers(this.searchTerm as string);
+    },
+
     setUsers(users: UserAdapter[]): void {
       this.users = users;
     },
