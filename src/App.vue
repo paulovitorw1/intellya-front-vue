@@ -1,5 +1,5 @@
 <template>
-  <ds-navbar text="Navbar" nameButton="Navbar">
+  <ds-navbar>
     <router-view />
   </ds-navbar>
 </template>

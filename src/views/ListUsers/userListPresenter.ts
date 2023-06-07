@@ -6,24 +6,37 @@ import { adaptAPIUserToUser } from "@/Adapter/adaptAPIUserToUser";
 
 
 export class UserListPresenter {
-    private view: UserListView;
-    private _users:  UserRest
+  private view: UserListView;
+  private _users: UserRest
+  private originalUsers: UserAdapter[];
 
-    constructor(view: UserListView) {
-        this.view = view;
-        this._users = new UserRest()
-    }
+  constructor(view: UserListView) {
+    this.view = view;
+    this._users = new UserRest();
+    this.originalUsers = [];
+  }
 
-    getUsers(): void {
-         this._users
-          .getUsers()
-          .then((data: User[]) => {
-            const users = adaptAPIUserToUser(data) as UserAdapter[]
-            this.view.setUsers(users)
-          })
-          .catch((error) => {
-            console.error(error);
-            throw error;
-          });
-      }
+
+  getUsers(): void {
+    this._users
+      .getUsers()
+      .then((data: User[]) => {
+        const users = adaptAPIUserToUser(data) as UserAdapter[]
+        this.originalUsers = users;
+        this.view.setUsers(users)
+      })
+      .catch((error) => {
+        throw error;
+      });
+  }
+
+  filtersUsers(valueSearch: string): void {
+    const filteredUsers = this.originalUsers.filter(user => {
+      const nameMatch = user.name.toLowerCase().includes(valueSearch.toLowerCase());
+      const emailMatch = user.email.toLowerCase().includes(valueSearch.toLowerCase());
+      return nameMatch || emailMatch;
+    });
+
+   this.view.setUsers(filteredUsers)
+  }
 }
