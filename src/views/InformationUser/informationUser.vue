@@ -1,5 +1,5 @@
 <template>
-  <h3>Usuários n° {{ this.$route.params.id }}</h3>
+  <h3>Usuário n° {{ this.$route.params.id }}</h3>
   <p class="my-3">Visualize as informações do usuário solicitado abaixo.</p>
   <div class="card py-0 shadow-sm bg-body rounded">
     <ul class="list-group list-group-flush">

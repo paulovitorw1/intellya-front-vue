@@ -5,7 +5,7 @@ import InformationUser from '../views/InformationUser/informationUser.vue'
 const routes: Array<RouteRecordRaw> = [
   {
     path: "/",
-    name: "MyCourses",
+    name: "listUsers",
     component: ListUsers,
   },
   {
@@ -13,7 +13,6 @@ const routes: Array<RouteRecordRaw> = [
     name: "informationUser",
     component: InformationUser,
     props: true,
-    meta: { shouldShowInputSearch: false },
   },
 ]
 
