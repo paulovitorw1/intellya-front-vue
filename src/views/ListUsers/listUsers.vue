@@ -21,7 +21,7 @@
           <ds-button
             type="tertiary"
             text="Visualizar"
-            @click="redirectContract(user.id)"
+            @click="redirectForUserInfor(user.id)"
           />
         </td>
       </tr>
@@ -66,7 +66,7 @@ export default defineComponent({
     setUsers(users: UserAdapter[]): void {
       this.users = users;
     },
-    redirectContract(id: string) {
+    redirectForUserInfor(id: string): void {
       this.$router.push({
         name: "informationUser",
         params: { id: id },

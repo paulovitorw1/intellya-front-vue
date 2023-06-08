@@ -15,7 +15,7 @@
             </div>
             <li class="nav-item border-bottom-item mx-2">
               <a class="nav-link pt-3 fw-bold" href="javascript:void(0)"
-                >Usuario</a
+                >Usuário</a
               >
             </li>
           </ul>
